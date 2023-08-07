@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/MainScreens/login/welcomeScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,18 +12,36 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: const Color(0xff2c2b50),
-        primaryColorDark: const Color(0xff050028),
-        primaryColorLight: const Color(0xff57547c),
+        primaryColor: Color.fromARGB(255, 60, 164, 83),
+        primaryColorDark: Color.fromARGB(255, 20, 93, 10),
+        primaryColorLight: Color.fromARGB(255, 109, 174, 128),
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: const Color(0xff2c2b50),
+          primary: Color.fromARGB(255, 27, 195, 63),
           secondary: const Color(0xffedecee),
-          tertiary: Color.fromARGB(112, 43, 208, 213),
+          tertiary: Color.fromARGB(111, 43, 213, 136),
           background: const Color(0xffffffff),
+        ),
+        textTheme: TextTheme(
+          displayLarge: TextStyle(
+            fontFamily: 'Roboto',
+            fontSize: 30,
+            color: Colors.white,
+            fontWeight: FontWeight.w700,
+          ),
+          displayMedium: TextStyle(
+            fontFamily: 'Roboto',
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
+          ),
+          displaySmall: TextStyle(
+            fontFamily: 'Roboto',
+            fontSize: 12,
+            fontWeight: FontWeight.w700,
+          ),
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Hola'),
+      home: WelcomeScreen(),
     );
   }
 }
@@ -40,7 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Theme.of(context).primaryColor),
-      body: Center(),
+      body: Center(
+        child: Text('Hello World!!'),
+      ),
     );
   }
 }
